@@ -1,0 +1,25 @@
+import java.util.Scanner;
+
+
+public class forward {
+	public static void main(String args[]){
+		Scanner in = new Scanner(System.in);
+		try{
+			while(true){
+					double a, b, c, x1, x2;
+					System.out.println("Please enter your 'A' variable.");
+					a=in.nextInt();
+					System.out.println("Please enter your 'B' variable.");
+					b=in.nextInt();
+					System.out.println("Please enter your 'C' variable.");
+					c=in.nextInt();
+					x1 = (-b + Math.sqrt(b*b - 4*a*c))/2*a;
+					x2 = (-b - Math.sqrt(b*b - 4*a*c))/2*a;				
+					System.out.println("Answer: " + x1 + " or " + x2);
+			} 
+		} 
+		finally{
+		   in.close();
+		}
+	}
+}
