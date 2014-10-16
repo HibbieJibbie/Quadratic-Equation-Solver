@@ -1,0 +1,39 @@
+import java.util.Scanner;
+import java.awt.*; 
+import javax.swing.*;
+
+public class forward{
+	private static void createWindow(){
+		JFrame frame = new JFrame("Simple Gui");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		JLabel textLabel = new JLabel("I'm a label in the window", SwingConstants.CENTER);
+		textLabel.setPreferredSize(new Dimension(300, 100));
+		frame.getContentPane().add(textLabel, BorderLayout.CENTER);
+		
+		frame.setLocationRelativeTo(null);
+		frame.pack();
+		frame.setVisible(true);
+	}
+	public static void main(String args[]){
+		Scanner in = new Scanner(System.in);
+		createWindow();
+		try{
+			while(true){					
+					double a, b, c, x1, x2;
+					System.out.println("Please enter your 'A' variable.");
+					a=in.nextInt();
+					System.out.println("Please enter your 'B' variable.");
+					b=in.nextInt();
+					System.out.println("Please enter your 'C' variable.");
+					c=in.nextInt();
+					x1 = (-b + Math.sqrt(b*b - 4*a*c))/2*a;
+					x2 = (-b - Math.sqrt(b*b - 4*a*c))/2*a;				
+					System.out.println("Answer: " + x1 + " or " + x2);
+			} 
+		} 
+		finally{
+		   in.close();
+		}
+	}
+}
